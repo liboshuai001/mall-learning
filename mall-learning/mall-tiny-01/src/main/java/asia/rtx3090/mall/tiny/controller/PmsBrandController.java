@@ -72,8 +72,8 @@ public class PmsBrandController {
      * @param pmsBrand 产品数据
      * @return 更新的产品信息
      */
-    @ApiOperation(value = "更新指定id的产品", httpMethod = "GET")
-    @RequestMapping(value = "/updateBrandById/{id}", method = RequestMethod.GET)
+    @ApiOperation(value = "更新指定id的产品", httpMethod = "POST")
+    @RequestMapping(value = "/updateBrandById/{id}", method = RequestMethod.POST)
     public CommonResult updateBrandById(@PathVariable("id") Long id, @RequestBody PmsBrand pmsBrand) {
         CommonResult commonResult;
         int count = pmsBrandService.updateBrandById(id, pmsBrand);
