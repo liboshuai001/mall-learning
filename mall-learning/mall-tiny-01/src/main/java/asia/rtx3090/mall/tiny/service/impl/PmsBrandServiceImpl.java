@@ -5,6 +5,8 @@ import asia.rtx3090.mall.tiny.model.PmsBrand;
 import asia.rtx3090.mall.tiny.model.PmsBrandExample;
 import asia.rtx3090.mall.tiny.service.PmsBrandService;
 import com.github.pagehelper.PageHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,11 @@ public class PmsBrandServiceImpl implements PmsBrandService {
         this.pmsBrandMapper = pmsBrandMapper;
     }
 
+    public PmsBrandServiceImpl() {
+    }
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PmsBrandServiceImpl.class);
+
     /**
      * 查询全部产品数据
      *
@@ -43,6 +50,7 @@ public class PmsBrandServiceImpl implements PmsBrandService {
      */
     @Override
     public int createBrand(PmsBrand pmsBrand) {
+        LOGGER.debug("插入产品数据pmsBrand:{}", pmsBrand);
         return pmsBrandMapper.insertSelective(pmsBrand);
     }
 
@@ -54,7 +62,8 @@ public class PmsBrandServiceImpl implements PmsBrandService {
      * @return 更新成功的行数
      */
     @Override
-    public int updateBrand(Long id, PmsBrand pmsBrand) {
+    public int updateBrandById(Long id, PmsBrand pmsBrand) {
+        LOGGER.debug("更新指定id的产品数据id{},pmsBrand{}", id, pmsBrand);
         pmsBrand.setId(id);
         return pmsBrandMapper.updateByPrimaryKeySelective(pmsBrand);
     }
@@ -66,7 +75,8 @@ public class PmsBrandServiceImpl implements PmsBrandService {
      * @return 删除成功的行数
      */
     @Override
-    public int deleteBrand(Long id) {
+    public int deleteBrandById(Long id) {
+        LOGGER.debug("删除指定id的产品数据id{}", id);
         return pmsBrandMapper.deleteByPrimaryKey(id);
     }
 
@@ -78,7 +88,8 @@ public class PmsBrandServiceImpl implements PmsBrandService {
      * @return 分页查询得到的产品数据
      */
     @Override
-    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
+    public List<PmsBrand> pagingListBrand(int pageNum, int pageSize) {
+        LOGGER.debug("分页查询产品数据pageNum{},pageSize{}", pageNum, pageSize);
         PageHelper.startPage(pageNum, pageSize);
         return pmsBrandMapper.selectByExample(new PmsBrandExample());
     }
@@ -90,7 +101,8 @@ public class PmsBrandServiceImpl implements PmsBrandService {
      * @return 查询得到的产品数据
      */
     @Override
-    public PmsBrand getBrand(Long id) {
+    public PmsBrand getBrandById(Long id) {
+        LOGGER.debug("根据产品id查询产品数据id{}", id);
         return pmsBrandMapper.selectByPrimaryKey(id);
     }
 }

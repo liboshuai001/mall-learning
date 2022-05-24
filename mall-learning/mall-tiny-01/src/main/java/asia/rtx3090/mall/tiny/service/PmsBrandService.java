@@ -32,7 +32,7 @@ public interface PmsBrandService {
      * @param pmsBrand 产品数据
      * @return 更新成功的行数
      */
-    int updateBrand(Long id, PmsBrand pmsBrand);
+    int updateBrandById(Long id, PmsBrand pmsBrand);
 
     /**
      * 删除指定id的产品数据
@@ -40,7 +40,7 @@ public interface PmsBrandService {
      * @param id 产品id
      * @return 删除成功的行数
      */
-    int deleteBrand(Long id);
+    int deleteBrandById(Long id);
 
     /**
      * 分页查询产品数据
@@ -49,7 +49,7 @@ public interface PmsBrandService {
      * @param pageSize 数据数量
      * @return 分页查询得到的产品数据
      */
-    List<PmsBrand> listBrand(int pageNum, int pageSize);
+    List<PmsBrand> pagingListBrand(int pageNum, int pageSize);
 
     /**
      * 根据产品id查询产品数据
@@ -57,5 +57,5 @@ public interface PmsBrandService {
      * @param id 产品id
      * @return 查询得到的产品数据
      */
-    PmsBrand getBrand(Long id);
+    PmsBrand getBrandById(Long id);
 }

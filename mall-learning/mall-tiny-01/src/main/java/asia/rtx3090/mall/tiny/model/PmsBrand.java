@@ -1,63 +1,74 @@
 package asia.rtx3090.mall.tiny.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
 public class PmsBrand implements Serializable {
+    /**
+     * 主键
+     **/
+    @ApiModelProperty(value = "主键")
     private Long id;
 
+    /**
+     * 产品名称
+     **/
+    @ApiModelProperty(value = "产品名称")
     private String name;
 
     /**
      * 首字母
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "首字母")
     private String firstLetter;
 
+    /**
+     * 产品名称
+     **/
+    @ApiModelProperty(value = "产品名称")
     private Integer sort;
 
     /**
      * 是否为品牌制造商：0->不是；1->是
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "是否为品牌制造商")
     private Integer factoryStatus;
 
+    /**
+     * 展示状态
+     **/
+    @ApiModelProperty(value = "展示状态")
     private Integer showStatus;
 
     /**
      * 产品数量
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "产品数量")
     private Integer productCount;
 
     /**
      * 产品评论数量
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "产品评论数量")
     private Integer productCommentCount;
 
     /**
      * 品牌logo
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "品牌logo")
     private String logo;
 
     /**
      * 专区大图
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "专区大图")
     private String bigPic;
 
     /**
      * 品牌故事
-     *
-     * @mbggenerated
-     */
+     **/
+    @ApiModelProperty(value = "品牌故事")
     private String brandStory;
 
     private static final long serialVersionUID = 1L;

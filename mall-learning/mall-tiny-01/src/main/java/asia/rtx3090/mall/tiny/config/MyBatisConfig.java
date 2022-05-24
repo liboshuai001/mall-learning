@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @Description: MyBatis配置类
  */
 @Configuration
-@MapperScan("asia.rtx3090.mall.tiny.mbg.mapper")
+@MapperScan("asia.rtx3090.mall.tiny.mapper")
 public class MyBatisConfig {
 }
